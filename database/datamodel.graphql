@@ -1,0 +1,15 @@
+type User {
+    id: ID! @unique
+    createdAt: DateTime!
+    username: String! @unique
+    password: String!
+    articles: [Article!]!
+}
+
+type Article {
+    id: ID! @unique
+    createdAt: DateTime!
+    title: String!
+    body: String!
+    postedBy: User#!
+}
